@@ -4,3 +4,4 @@ This second script file 1-listit lists the contents of a directory.
 4. The fourth script file lists directories in long format
 5. The fifth script file lists directories in long format together with any hidden files in the directory.
 6. The sixth script file lists user IDS and group IDs in long format and also lists hidden files.
+7. The seventhscript file creates a directory within another directory, tmp
