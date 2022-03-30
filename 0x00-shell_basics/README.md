@@ -2,4 +2,5 @@
 This second script file 1-listit lists the contents of a directory.
 3. The third script file changes the working directory to user's home directory.
 4. The fourth script file lists directories in long format
-5. The fifth script file lists directories in long format together with any hidden files in the directory
+5. The fifth script file lists directories in long format together with any hidden files in the directory.
+6. The sixth script file lists user IDS and group IDs in long format and also lists hidden files.
