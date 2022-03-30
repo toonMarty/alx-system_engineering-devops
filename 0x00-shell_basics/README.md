@@ -8,4 +8,5 @@
  The eighth script file moves the file betty to my first directory
  Bye bye betty. This script file deletes betty
  Bye bye my first directory. This script fil deletes my first directory
- Back to the future. Goes back to previous directory
+ Back to the future. Goes back to previous directory.
+Lists. This script uses multiple commands to display files in long-format. The multiple commands are all listing commands
