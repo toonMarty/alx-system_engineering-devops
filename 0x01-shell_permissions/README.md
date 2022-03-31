@@ -9,3 +9,4 @@ Empty: the script file that creates an empty file called hello
 Execute: a script file that changes the owners permission on the file hello to execute.
 Multiple Permissions: adds multiple permissions to group, owner and world as specified
 Everybody: a script that let's all file users execute the file.
+James Bond: a script that gives the world all permissions and denies the owner and group all permissions
