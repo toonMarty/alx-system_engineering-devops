@@ -8,3 +8,4 @@ New-owner: changes the owner of the file to betty.
 Empty: the script file that creates an empty file called hello
 Execute: a script file that changes the owners permission on the file hello to execute.
 Multiple Permissions: adds multiple permissions to group, owner and world as specified
+Everybody: a script that let's all file users execute the file.
