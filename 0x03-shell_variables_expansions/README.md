@@ -7,3 +7,4 @@
 6-create_local_variable. A script that creates a local variable BEST with value School
 7-create_global_variable. A script that creates a global variable BEST with value School
 8-true_knowledge. a script that prints the result of the addition of 128 with the value stored in the environment variable TRUEKNOWLEDGE, followed by a new line.
+9-divide_and_rule. A script that prints the result of POWER divided by DIVIDE
