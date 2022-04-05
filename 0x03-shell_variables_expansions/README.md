@@ -5,3 +5,4 @@
 4-globals_variables. A script that prints global variables
 5-local_variables. Ascript that prints local variables and functions
 6-create_local_variable. A script that creates a local variable BEST with value School
+7-create_global_variable. A script that creates a global variable BEST with value School
