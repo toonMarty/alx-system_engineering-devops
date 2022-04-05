@@ -9,3 +9,4 @@
 8-true_knowledge. a script that prints the result of the addition of 128 with the value stored in the environment variable TRUEKNOWLEDGE, followed by a new line.
 9-divide_and_rule. A script that prints the result of POWER divided by DIVIDE
 11-binary_to_decimal. A script that converts from binary to decimal
+12-combinations. A script that prints all possible combinations of two letters, except oo.
