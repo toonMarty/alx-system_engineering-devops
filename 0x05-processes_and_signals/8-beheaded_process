@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# A script that kills 7-highlander
+pid=$(pgrep -f ./7-highlander)
+kill -9 "$pid"
