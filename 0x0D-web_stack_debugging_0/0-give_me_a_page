@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# A script fixes a connection problem and renders the content in a web page
+service apache2 start
