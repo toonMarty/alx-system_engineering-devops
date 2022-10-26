@@ -1,0 +1,17 @@
+
+defaults
+	mode http
+	timeout client 15s
+	timeout connect 10s
+	timeout server 15s
+	timeout http-request 10s
+
+frontend th3gr00t-tech-frontend
+	bind *:80
+	default_backend th3gr00t-tech-backend
+
+backend th3gr00t-tech-backend
+	balance roundrobin
+	server 47471-web-01 3.238.234.192 check
+	server 47471-web-02 52.           check
+

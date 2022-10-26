@@ -1,42 +1,58 @@
 #!/usr/bin/env bash
 # installing HAProxy
-apt-get install -y software-properties-common
-add-apt-repository ppa:vbernat/haproxy-2.4
+blue='\e[1;34m'
+brown='\e[0;33m'
+green='\e[1;32m'
+reset='\033[0m'
 
-apt-get update
-apt-get install -y haproxy=2.4.\*
+echo -e "${blue}Updating and doing some minor checks...${reset}\n"
 
-echo "ENABLED=1" >> /etc/default/haproxy
-mv /etc/haproxy/haproxy.cfg {,.original}
+function install() {
+	command -v "$1" &> /dev/null
 
-touch /etc/haproxy/haproxy.cfg
+	#shellcheck disable=SC2181
+	if [ $? -ne 0 ]; then
+		echo -e "	Installing: ${brown}$1${reset}\n"
+		sudo apt-get update -y -qq && \
+			sudo apt-get install -y "$1" -qq
+		echo -e "\n"
+	else
+		echo -e "	${green}${1} is already installed.${reset}\n"
+	fi
+}
 
-printf %s "global
-	log 127.0.0.1 local0 notice
-	maxconn 2000
-	user haproxy
-	group haproxy
+install haproxy
 
+echo -e "\n${blue}Setting up some minor stuff.${reset}\n"
+
+sudo cp /etc/haproxy/haproxy.cfg haproxy_default.backup
+
+server_config=\
+"
 defaults
-	log global
 	mode http
-	option httplog
-	option dontlognull
-	retries 3
-	option redispatch
-	timeout connect 5000
-	timeout client 10000
-	timeout server 10000
-listen hbnb
-	bind 0.0.0.0:80
-	mode http
-	stats enable
-	stats uri /haproxy?stats
+	timeout client 15s
+	timeout connect 10s
+	timeout server 15s
+	timeout http-request 10s
+
+frontend th3gr00t-tech-frontend
+	bind *:80
+	default_backend th3gr00t-tech-backend
+
+backend th3gr00t-tech-backend
 	balance roundrobin
-	option httpclose
-	option forwardfor
 	server 47471-web-01 3.238.234.192 check port 80
 	server 47471-web-02 52.91.151.139 check port 80
-" >> /etc/haproxy/haproxy.cfg
+"
 
-service haproxy start
+echo "$server_config" | sudo dd status=none of=/etc/haproxy/haproxy.cfg
+
+# enable haproxy to be started by init script
+echo "ENABLED=1" | sudo dd status=none of=/etc/default/haproxy
+
+if [ "$(pgrep -c haproxy)" -le 0 ]; then
+	sudo service haproxy start
+else
+	sudo service haproxy restart
+fi
