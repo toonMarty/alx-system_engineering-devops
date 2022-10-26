@@ -6,3 +6,6 @@ Host 3.238.234.192
 Host 52.91.151.139
  PasswordAuthentication no
  IdentityFile ~/.ssh/school
+Host 100.26.121.239
+ PasswordAuthentication no
+ IdentityFile ~/.ssh/school
