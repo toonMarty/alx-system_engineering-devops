@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-id -un "$1"
+# a bash script that runs as another user
+sudo -u "$1" whoami
