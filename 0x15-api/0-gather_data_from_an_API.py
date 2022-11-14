@@ -40,4 +40,4 @@ if __name__ == "__main__":
     for i in range(len(parse_json)):
         if parse_json[i]['userId'] == employee_id:
             if parse_json[i]['completed']:
-                print('\t{}'.format(parse_json[i]['title']))
+                print('\t {}'.format(parse_json[i]['title']))
