@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""This module exports API data
+   to a CSV file
+"""
+
 if __name__ == "__main__":
     import csv
     import requests
