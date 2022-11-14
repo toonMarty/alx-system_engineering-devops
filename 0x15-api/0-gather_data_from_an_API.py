@@ -5,9 +5,9 @@ his/her TODO list progress.
 """
 
 if __name__ == "__main__":
-    import sys
-    import requests
     import json
+    import requests
+    import sys
 
     response_API = requests.get('https://jsonplaceholder.typicode.com/todos')
     response_emp_API = \
