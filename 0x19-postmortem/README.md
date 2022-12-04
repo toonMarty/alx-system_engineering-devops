@@ -28,10 +28,15 @@ Upon encountering the issue, I executed the ping command to verify that the web 
 also running the netstat command to check TCP connections and TCP socket information. Since the web server
 was not reachable, I decided to check the server status and found out that the server was not running.
 I started the server using a bash script:
+
   _service apache2 start_
+
 and executed curl,
+
   _curl 0:8080_
+
 which displayed the contents of the web page as desired:
+
 **Hello Holberton**
 
 **Corrective and preventative measures**
