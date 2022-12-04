@@ -36,10 +36,10 @@ which displayed the contents of the web page as desired:
 
 **Corrective and preventative measures**
 
-Add monitoring on server status
-Ensure that the server is started before requests are made by users
-Using the HTTP test tool in the event that the problem persists
-Using a different port
-Using https instead of HTTP
-If the error is caused by a server redirection, try executing the curl command using curl -L
-Check firewall rules and ensure that required ports and services are enabled in the firewall
+* Add monitoring on server status
+* Ensure that the server is started before requests are made by users
+* Using the HTTP test tool in the event that the problem persists
+* Using a different port
+* Using https instead of HTTP
+* If the error is caused by a server redirection, try executing the curl command using curl -L
+* Check firewall rules and ensure that required ports and services are enabled in the firewall
